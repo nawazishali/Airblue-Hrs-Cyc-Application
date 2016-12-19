@@ -1,0 +1,83 @@
+/*body {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/fb/Airblue_Logo.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.form-control {
+    border-radius: 4px !important;
+}*/
+
+
+@media print
+{
+body { visibility: hidden;  -webkit-print-color-adjust: exact !important; padding: 0 !important;}
+.table { visibility: visible; }
+.table { position: absolute; width: 99.9% !important; margin: 0 auto !important;}
+}
+
+@page {
+  size: A4 landscape;
+  margin: 5mm;
+}
+
+
+body {
+  -webkit-animation-duration: 1.5s !important;
+  -webkit-animation-delay: 0.9s;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+input {
+    text-align: center;
+}
+
+#toorand:hover, #uptoorand:hover {
+    cursor:  pointer;
+}
+
+.error {
+    background-color: rgb(255, 221, 228) !important;
+}
+
+.btn-margin { 
+    margin-bottom: 20px !important;
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.stripe {
+    background-color: #f9f9f9;
+}
+
+#copy-msg {
+    position: absolute;
+    top: 20%;
+    left: 42%;
+    z-index: 99;
+}
+
+.table {
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+
+/*#ab-logo {
+    background-image: url(../images/Airblue_Logo.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 300px;
+}
+
+/*.table-striped {
+    background-color:#6eb1ff;
+}
+
+/*table {
+    width: 97.7vw !important; margin-top: 20px;
+}*/

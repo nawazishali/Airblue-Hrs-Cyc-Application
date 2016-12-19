@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link href="css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker3.css" type="text/css">
+    <!--<link rel="stylesheet" href="css/datatables.css">-->
+    <link rel="stylesheet" href="css/jquery.timeentry.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <title>Airblue HRS/CYC's</title>
+</head>
+
+<body class="container-fluid text-center animated zoomIn">
+    <nav style="width:96vw; margin: 0 auto;">
+        <h1 class="pull-left"><span style="color: #828282; font-weight: 200;">air</span><span style="color: #252f86; font-weight: 800;">blue</span></h1>
+        <div class="pull-right" style="margin-top:15px; ">
+            <!-- Trigger the new A/C modal with a button -->
+            <button type="button" class="btn-margin btn btn-primary" data-toggle="modal" data-target="#addac">Add New Aircraft</button>
+            <!-- Trigger the update A/C modal with a button -->
+            <button type="button" class="btn-margin btn btn-primary" data-toggle="modal" data-target="#updateac">Update Aircraft</button>
+            <!-- Trigger the Estimator modal with a button -->
+            <button type="button" class="btn-margin btn btn-primary" data-toggle="modal" data-target="#estimator">Estimator</button>
+            <!-- Trigger the Checks Adjustment modal with a button -->
+            <button type="button" class="btn-margin btn btn-primary" data-toggle="modal" data-target="#chksadjust">Adjust Checks</button>
+            <!-- Trigger the remove A/C modal with a button -->
+            <button type="button" class="btn-margin btn btn-danger" data-toggle="modal" data-target="#removeac">Remove Aircraft</button>
+            <!-- Trigger Table copy -->
+            <button type="button" class="btn-margin btn btn-success copy" data-clipboard-action="copy" data-clipboard-target=".table">Copy Table</button>
+            <!-- Trigger Print -->
+            <button onclick="window.print()" type="button" class="btn-margin btn btn-success">Print</button>
+            <!-- Trigger About -->
+            <button type="button" class="btn-margin btn btn-default" data-toggle="modal" data-target="#about">About</button>
+        </div>
+    </nav>
+    <!-- New A/C Modal -->
+    <div id="addac" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-md">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add New Aircraft</h4> </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" id="aircraft-form">
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">A/C Registration</label>
+                            <div class="col-sm-9">
+                                <div class="input-group">
+                                    <input class="form-control" type="text" name="registration" id="reg" placeholder="AP-XXX" required><span class="input-group-addon"><i class="glyphicon glyphicon-plane"></i></span> </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Date</label>
+                            <div class="col-sm-9">
+                                <div class="input-group date">
+                                    <input type="text" class="form-control" name="date" id="date" placeholder="dd-M-yyyy" required><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span> </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">TLP Range</label>
+                            <div class="col-sm-9">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="tlpfrom" id="tlpfrom" placeholder="000000" required><span class="input-group-addon" id="toorand" onclick="toOrAnd(this)">TO</span>
+                                    <input type="text" class="form-control" name="tlpto" id="tlpto" placeholder="000000" required> </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Airframe</label>
+                            <div class="col-sm-9">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input class="timepicker form-control" name="afhrs" id="afhrs" placeholder="000:00" required><span class="input-group-addon">Hrs</span> </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" name="afcyc" id="afcyc" placeholder="0000" required><span class="input-group-addon">Cyc</span> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Engine 1</label>
+                            <div class="col-sm-9">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input class="timepicker form-control" name="e1hrs" id="e1hrs" placeholder="000:00" required><span class="input-group-addon">Hrs</span> </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" name="e1cyc" id="e1cyc" placeholder="0000" required><span class="input-group-addon">Cyc</span> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Engine 2</label>
+                            <div class="col-sm-9">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input class="timepicker form-control" name="e2hrs" id="e2hrs" placeholder="000:00" required><span class="input-group-addon">Hrs</span> </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" name="e2cyc" id="e2cyc" placeholder="0000" required><span class="input-group-addon">Cyc</span> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Check A</label>
+                            <div class="col-sm-9">
+                                <div class="input-group">
+                                    <input class="timepicker form-control" name="chka" id="chka" placeholder="000:00" required><span class="input-group-addon">Hrs</span> </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Check C</label>
+                            <div class="col-sm-9">
+                                <div class="input-group">
+                                    <input class="timepicker form-control" name="chkc" id="chkc" placeholder="000:00" required><span class="input-group-addon">Hrs</span> </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Remarks</label>
+                            <div class="col-sm-9" id="txtarea">
+                                <textarea rows="1" class="form-control text-center" name="remarks" id="remarks" placeholder="" disabled>Complete</textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-9 col-sm-offset-3">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <select name="statusselection" id="statusselection" class="form-control" onchange="statusSelection('statusselection', 'txtarea', 'remarks')">
+                                                <option value="completed">Completed</option>
+                                                <option value="missing-pages">Missing Pages</option>
+                                                <option value="ac-us">Aircraft U/S</option>
+                                                <option value="ac-nofly">Aircraft No Fly</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <button class="btn btn-default" type="submit">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Update A/C Modal -->
+    <div id="updateac" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-md">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Update Aircraft</h4> </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" id="updateac-form">
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Today's</label>
+                            <div class="col-sm-9">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input class="timepicker form-control" name="thrs" id="thrs" placeholder="000:00" required><span class="input-group-addon">Hrs</span> </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" name="tcyc" id="tcyc" placeholder="0000" required><span class="input-group-addon">Cyc</span> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Date</label>
+                            <div class="col-sm-9">
+                                <div class="input-group date">
+                                    <input type="text" class="form-control" name="up-date" id="up-date" placeholder="dd-M-yyyy" required><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span> </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">TLP Range</label>
+                            <div class="col-sm-9">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="uptlpfrom" id="uptlpfrom" placeholder="000000" required><span class="input-group-addon" id="uptoorand" onclick="toOrAnd(this)">TO</span>
+                                    <input type="text" class="form-control" name="uptlpto" id="uptlpto" placeholder="000000" required> </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Remarks</label>
+                            <div class="col-sm-9" id="uptxtarea">
+                                <textarea rows="1" class="form-control text-center" name="upremarks" id="upremarks" placeholder="" disabled>Complete</textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-9 col-sm-offset-3">
+                                <div class="row">
+                                    <div class="col-sm-6" style="text-align: left;">
+                                        <label style="padding-right: 30px;">Reset Check A </label>
+                                        <input type="checkbox" name="resetchka" id="resetchka" data-toggle="toggle"> </div>
+                                    <div class="col-sm-6" style="text-align: left;">
+                                        <label style="padding-right: 30px;">Reset Check C </label>
+                                        <input type="checkbox" name="resetchkc" id="resetchkc" data-toggle="toggle"> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-9 col-sm-offset-3">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="input-group">
+                                            <select id="updateselection" class="form-control"> </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="input-group">
+                                            <select id="upstatusselection" class="form-control" onchange="statusSelection('upstatusselection', 'uptxtarea', 'upremarks')">
+                                                <option value="completed">Completed</option>
+                                                <option value="missing-pages">Missing Pages</option>
+                                                <option value="ac-us">Aircraft U/S</option>
+                                                <option value="ac-nofly">Aircraft No Fly</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="input-group">
+                                            <button class="btn btn-default" type="submit">Update Aircraft</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Estimator Modal -->
+    <div id="estimator" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Hours Estimator</h4> </div>
+                <div class="modal-body">
+                    <div id="estimator-table-print">
+                        <table class="table table-bordered table-condensed">
+                            <thead>
+                                <tr>
+                                    <th style="text-align:center; vertical-align: middle; height: 60px;">Aircraft</th>
+                                    <th style="text-align:center; vertical-align: middle; height: 60px;">Current AF Hrs</th>
+                                    <th style="text-align:center; vertical-align: middle; height: 60px;">Current AF Cyc's</th>
+                                    <th style="text-align:center; vertical-align: middle; height: 60px; width: 100px;">Hrs</th>
+                                    <th style="text-align:center; vertical-align: middle; height: 60px; width: 100px;">Cyc's</th>
+                                    <th style="text-align:center; vertical-align: middle; height: 60px;">Estimated Hrs</th>
+                                    <th style="text-align:center; vertical-align: middle; height: 60px;">Estimated Cyc's</th>
+                                </tr>
+                            </thead>
+                            <tbody id="estimator-table"></tbody>
+                        </table>
+                    </div>
+                    <button class="btn btn-default" onclick="printContent('estimator-table-print')">print</button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Adjust Checks Modal -->
+    <div id="chksadjust" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-md">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Check A & C Hours Adjustment</h4> </div>
+                <div class="modal-body">
+                    <form class="form-inline" id="adjustchks-form">
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="control-label col-sm-3" style="padding-top: 5px;">Hrs till Check A</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input class="timepicker form-control" name="adjustchka" id="adjustchka" placeholder="000:00" value="00:00"><span class="input-group-addon">Hrs</span> </div>
+                                </div>
+                                <div class="col-sm-5" style="text-align: left;">
+                                    <label style="padding-right: 30px;">Reset Check A </label>
+                                    <input type="checkbox" name="adjustresetchka" id="adjustresetchka" data-toggle="toggle"> </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <label class="control-label col-sm-3" style="padding-top: 5px;">Hrs till Check C</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input class="timepicker form-control" name="adjustchkc" id="adjustchkc" placeholder="000:00" value="00:00"><span class="input-group-addon">Hrs</span> </div>
+                                </div>
+                                <div class="col-sm-5" style="text-align: left;">
+                                    <label style="padding-right: 30px;">Reset Check C </label>
+                                    <input type="checkbox" name="adjustresetchkc" id="adjustresetchkc" data-toggle="toggle"> </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-4 col-sm-offset-3">
+                                    <div class="input-group">
+                                        <select id="adjustselection" class="form-control"> </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <div class="input-group">
+                                        <button class="btn btn-default" type="submit">Adjust</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Remove A/C Modal -->
+    <div id="removeac" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Remove Aircraft</h4> </div>
+                <div class="modal-body">
+                    <form class="form-inline" id="removeac-form">
+                        <select id="remselection" class="form-control"> </select>
+                        <button class="btn btn-default" type="submit">Remove Aircraft</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About Modal -->
+    <div id="about" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-md">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">About</h4> </div>
+                <div class="modal-body">
+                    <h4><span style="color: #828282; font-weight: 200;">air</span><span style="color: #252f86; font-weight: 800;">blue</span> Hrs/Cyc's App</h4>
+                    <p>Release Version 1.0.0
+                        <br> Release Date: Mon Dec 19 2016
+                        <br> Released under MIT license & is free to use and copy.</p>
+                    <p>Airblue's Logo is a registered Trademark & All Rights reserved by it's owners</p>
+                    <p>Made with &hearts; Using JavaScript by: <a href="javascript:;" onclick="openUrl('https://nawazishali.github.io')">Nawazish Ali</a> </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table class="table table-bordered table-condensed">
+        <thead id="data">
+            <tr>
+                <th style="text-align:center; vertical-align: middle; height: 70px; font-size: 40px;" colspan="12"><span style="color: #828282; font-weight: 200;">air</span><span style="color: #252f86; font-weight: 800;">blue</span> Hrs & Cyc Status</th>
+            </tr>
+            <tr>
+                <th style="text-align:center; vertical-align: middle; height: 60px;">Aircraft</th>
+                <th style="text-align:center; vertical-align: middle; height: 60px;">Date</th>
+                <th style="text-align:center; vertical-align: middle; height: 60px;">TLP Range</th>
+                <th style="text-align:center; vertical-align: middle; height: 60px;" colspan="2">Airframe</th>
+                <th style="text-align:center; vertical-align: middle; height: 60px;" colspan="2">Engine 1</th>
+                <th style="text-align:center; vertical-align: middle; height: 60px;" colspan="2">Engine 2</th>
+                <th style="text-align:center; vertical-align: middle; height: 60px;">Check A</th>
+                <th style="text-align:center; vertical-align: middle; height: 60px;">Check C</th>
+                <th style="text-align:center; vertical-align: middle; height: 60px; width: 300px;">Status / Remarks</th>
+            </tr>
+        </thead>
+    </table>
+    <div id="copy-msg"></div>
+    <script src="js/jquery-2.2.3.js" type="text/javascript"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/bootstrap-datepicker.js" type="text/javascript"></script>
+    <!--<script src="js/datatables.js"></script>-->
+    <script src="js/bootstrap.js" type="text/javascript"></script>
+    <script src="js/bootstrap-toggle.min.js"></script>
+    <script type="text/javascript" src="js/jquery.plugin.js"></script>
+    <script type="text/javascript" src="js/jquery.timeentry.js"></script>
+    <script type="text/javascript" src="js/clipboard.js"></script>
+    <script src="index.js" type="text/javascript"></script>
+</body>
+
+</html>

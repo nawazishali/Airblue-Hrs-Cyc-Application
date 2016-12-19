@@ -1,0 +1,33 @@
+{
+  "app_name": "Airblue HrsCys Status",
+  "author": "Nawazish ALi",
+  "dependencies": {
+    "diskdb": "^0.1.17"
+  },
+  "description": "Airblue HRS/CYC Status App",
+  "license": "MIT",
+  "main": "index.html",
+  "name": "airblue-hrs-app",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0",
+  "webkit": {
+    "java": false,
+    "page-cache": false,
+    "plugin": true
+  },
+  "window": {
+    "fullscreen": false,
+    "kiosk": false,
+    "position": "center",
+    "resizable": true,
+    "width": 1200,
+    "height": 600,
+    "min_width": 1200,
+    "min_height": 600,
+    "title": "Airblue HrsCys Status",
+    "icon": "images/AB.png",
+    "toolbar": true
+  }
+}
