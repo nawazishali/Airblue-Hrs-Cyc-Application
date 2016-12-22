@@ -23,9 +23,9 @@
     "position": "center",
     "resizable": true,
     "width": 1200,
-    "height": 600,
+    "height": 640,
     "min_width": 1200,
-    "min_height": 600,
+    "min_height": 640,
     "title": "Airblue HrsCys Status",
     "icon": "images/AB.png",
     "toolbar": true

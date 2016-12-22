@@ -27,7 +27,7 @@
             <!-- Trigger the remove A/C modal with a button -->
             <button type="button" class="btn-margin btn btn-danger" data-toggle="modal" data-target="#removeac">Remove Aircraft</button>
             <!-- Trigger Table copy -->
-            <button type="button" class="btn-margin btn btn-success copy" data-clipboard-action="copy" data-clipboard-target=".table">Copy Table</button>
+            <button type="button" class="btn-margin btn btn-success copy" data-clipboard-action="copy" data-clipboard-target="#aircraft-table">Copy Table</button>
             <!-- Trigger Print -->
             <button onclick="window.print()" type="button" class="btn-margin btn btn-success">Print</button>
             <!-- Trigger About -->
@@ -36,7 +36,7 @@
     </nav>
     <!-- New A/C Modal -->
     <div id="addac" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-md">
+        <div class="modal-dialog modal-lg">
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
@@ -47,8 +47,16 @@
                         <div class="form-group">
                             <label class="control-label col-sm-3">A/C Registration</label>
                             <div class="col-sm-9">
+                                <div class="row">
+                                    <div class="col-sm-6">
                                 <div class="input-group">
                                     <input class="form-control" type="text" name="registration" id="reg" placeholder="AP-XXX" required><span class="input-group-addon"><i class="glyphicon glyphicon-plane"></i></span> </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" name="msn" id="msn" placeholder="0000" required><span class="input-group-addon">MSN</span> </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
@@ -85,13 +93,17 @@
                             <label class="control-label col-sm-3">Engine 1</label>
                             <div class="col-sm-9">
                                 <div class="row">
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-4">
                                         <div class="input-group">
                                             <input class="timepicker form-control" name="e1hrs" id="e1hrs" placeholder="000:00" required><span class="input-group-addon">Hrs</span> </div>
                                     </div>
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-4">
                                         <div class="input-group">
                                             <input type="number" class="form-control" name="e1cyc" id="e1cyc" placeholder="0000" required><span class="input-group-addon">Cyc</span> </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" name="e1esn" id="e1esn" placeholder="0000" required><span class="input-group-addon">ESN</span> </div>
                                     </div>
                                 </div>
                             </div>
@@ -100,35 +112,60 @@
                             <label class="control-label col-sm-3">Engine 2</label>
                             <div class="col-sm-9">
                                 <div class="row">
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-4">
                                         <div class="input-group">
                                             <input class="timepicker form-control" name="e2hrs" id="e2hrs" placeholder="000:00" required><span class="input-group-addon">Hrs</span> </div>
                                     </div>
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-4">
                                         <div class="input-group">
                                             <input type="number" class="form-control" name="e2cyc" id="e2cyc" placeholder="0000" required><span class="input-group-addon">Cyc</span> </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" name="e2esn" id="e2esn" placeholder="0000" required><span class="input-group-addon">ESN</span> </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-3">Check A</label>
+                            <label class="control-label col-sm-3">APU</label>
                             <div class="col-sm-9">
-                                <div class="input-group">
-                                    <input class="timepicker form-control" name="chka" id="chka" placeholder="000:00" required><span class="input-group-addon">Hrs</span> </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" name="apuhrs" id="apuhrs" placeholder="0000" required><span class="input-group-addon">Hrs</span> </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" name="apucyc" id="apucyc" placeholder="0000" required><span class="input-group-addon">Cyc</span> </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" name="apusn" id="apusn" placeholder="0000" required><span class="input-group-addon">SN</span> </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-3">Check C</label>
+                            <label class="control-label col-sm-3">Check</label>
                             <div class="col-sm-9">
+                                <div class="row">
+                                    <div class="col-sm-6">
                                 <div class="input-group">
-                                    <input class="timepicker form-control" name="chkc" id="chkc" placeholder="000:00" required><span class="input-group-addon">Hrs</span> </div>
+                                    <input class="timepicker form-control" name="chka" id="chka" placeholder="000:00" required><span class="input-group-addon">A</span> </div> 
+                                    </div> 
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                    <input class="timepicker form-control" name="chkc" id="chkc" placeholder="000:00" required><span class="input-group-addon">C</span> </div>
+                                    </div>
+                                
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-3">Remarks</label>
                             <div class="col-sm-9" id="txtarea">
-                                <textarea rows="1" class="form-control text-center" name="remarks" id="remarks" placeholder="" disabled>Complete</textarea>
+                                <textarea rows="1" class="form-control text-center" name="remarks" id="remarks" placeholder="" disabled>Completed</textarea>
                             </div>
                         </div>
                         <div class="form-group">
@@ -186,6 +223,21 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label class="control-label col-sm-3">APU</label>
+                            <div class="col-sm-9">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" name="upapuhrs" id="upapuhrs" placeholder="0000" required><span class="input-group-addon">Hrs</span> </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" name="upapucyc" id="upapucyc" placeholder="0000" required><span class="input-group-addon">Cyc</span> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label class="control-label col-sm-3">Date</label>
                             <div class="col-sm-9">
                                 <div class="input-group date">
@@ -203,7 +255,7 @@
                         <div class="form-group">
                             <label class="control-label col-sm-3">Remarks</label>
                             <div class="col-sm-9" id="uptxtarea">
-                                <textarea rows="1" class="form-control text-center" name="upremarks" id="upremarks" placeholder="" disabled>Complete</textarea>
+                                <textarea rows="1" class="form-control text-center" name="upremarks" id="upremarks" placeholder="" disabled>Completed</textarea>
                             </div>
                         </div>
                         <div class="form-group">
@@ -373,6 +425,7 @@
                         <br> Release Date: Mon Dec 19 2016
                         <br> Released under MIT license & is free to use and copy.</p>
                     <p>Airblue's Logo is a registered Trademark & All Rights reserved by it's owners</p>
+                    <p>Documentation & source at: <a href="javascript:;" onclick="openUrl('https://github.com/nawazishali/Airblue-Hrs-Cyc-Application')">https://github.com/nawazishali/Airblue-Hrs-Cyc-Application</a></p>
                     <p>Made with &hearts; Using JavaScript by: <a href="javascript:;" onclick="openUrl('https://nawazishali.github.io')">Nawazish Ali</a> </p>
                 </div>
                 <div class="modal-footer">
@@ -381,21 +434,22 @@
             </div>
         </div>
     </div>
-    <table class="table table-bordered table-condensed">
+    <table class="table table-bordered table-condensed" id="aircraft-table" style="width: 96vw;">
         <thead id="data">
             <tr>
-                <th style="text-align:center; vertical-align: middle; height: 70px; font-size: 40px;" colspan="12"><span style="color: #828282; font-weight: 200;">air</span><span style="color: #252f86; font-weight: 800;">blue</span> Hrs & Cyc Status</th>
+                <th style="text-align:center; vertical-align: middle; height: 70px; font-size: 40px;" colspan="14">Hours & Cycles Status</th>
             </tr>
-            <tr>
+            <tr style="background-color:#252f86; color: white;">
                 <th style="text-align:center; vertical-align: middle; height: 60px;">Aircraft</th>
                 <th style="text-align:center; vertical-align: middle; height: 60px;">Date</th>
                 <th style="text-align:center; vertical-align: middle; height: 60px;">TLP Range</th>
                 <th style="text-align:center; vertical-align: middle; height: 60px;" colspan="2">Airframe</th>
                 <th style="text-align:center; vertical-align: middle; height: 60px;" colspan="2">Engine 1</th>
                 <th style="text-align:center; vertical-align: middle; height: 60px;" colspan="2">Engine 2</th>
+                <th style="text-align:center; vertical-align: middle; height: 60px;" colspan="2">APU</th>
                 <th style="text-align:center; vertical-align: middle; height: 60px;">Check A</th>
                 <th style="text-align:center; vertical-align: middle; height: 60px;">Check C</th>
-                <th style="text-align:center; vertical-align: middle; height: 60px; width: 300px;">Status / Remarks</th>
+                <th style="text-align:center; vertical-align: middle; height: 60px; width: 200px;">Status / Remarks</th>
             </tr>
         </thead>
     </table>

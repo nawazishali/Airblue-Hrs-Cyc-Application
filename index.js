@@ -14,9 +14,9 @@ function DisplayRecords() {
     for (var i = 0; i < allRecord.length; i++) {
          var row;
         if (i%2 === 0){
-            row = '<tbody class="delete"><tr class="stripe"><td style="vertical-align: middle;" rowspan="2">'+ allRecord[i].registration +'</td><td style="vertical-align: middle;" rowspan="2">'+ allRecord[i].date +'</td><td style="vertical-align: middle;" rowspan="2">'+ allRecord[i].tlprange +'</td><td style="vertical-align: middle;">'+ allRecord[i].afhrs +'</td><th style="vertical-align: middle; width: 10px;">FH</th><td style="vertical-align: middle;">'+ allRecord[i].e1hrs +'</td><th style="vertical-align: middle; width: 10px;">FH</th><td style="vertical-align: middle;">'+ allRecord[i].e2hrs +'</td><th style="vertical-align: middle; width: 10px;">FH</th><td style="vertical-align: middle;" rowspan="2">'+ allRecord[i].chka +'</td><td style="vertical-align: middle;" rowspan="2">'+ allRecord[i].chkc +'</td><td style="vertical-align: middle;" rowspan="2">'+ allRecord[i].remarks +'</td></tr><tr class="stripe"><td>'+ allRecord[i].afcyc +'</td><th>FC</th><td>'+ allRecord[i].e1cyc +'</td><th>FC</th><td>'+ allRecord[i].e2cyc +'</td><th>FC</th></tr></tbody>';
+            row = '<tbody class="delete"><tr class="stripe"><td style="vertical-align: middle;" rowspan="3">'+ allRecord[i].registration +'</td><td style="vertical-align: middle;" rowspan="3">'+ allRecord[i].date +'</td><td style="vertical-align: middle;" rowspan="3">'+ allRecord[i].tlprange +'</td><td colspan="2" style="font-weight: 400; color: DarkCyan;">'+ allRecord[i].msn +'</td><td colspan="2" style="font-weight: 400; color: DarkCyan;">'+ allRecord[i].e1esn +'</td><td colspan="2" style="font-weight: 400; color: DarkCyan;">'+ allRecord[i].e2esn +'</td><td colspan="2" style="font-weight: 400; color: DarkCyan;">'+ allRecord[i].apusn +'</td><td style="vertical-align: middle;" rowspan="3">'+ allRecord[i].chka +'</td><td style="vertical-align: middle;" rowspan="3">'+ allRecord[i].chkc +'</td><td style="vertical-align: middle;" rowspan="3">'+ allRecord[i].remarks +'</td></tr><tr class="stripe"><td style="vertical-align: middle;">'+ allRecord[i].afhrs +'</td><th style="vertical-align: middle; width: 10px;">FH</th><td style="vertical-align: middle;">'+ allRecord[i].e1hrs +'</td><th style="vertical-align: middle; width: 10px;">FH</th><td style="vertical-align: middle;">'+ allRecord[i].e2hrs +'</td><th style="vertical-align: middle; width: 10px;">FH</th><td style="vertical-align: middle;">'+ allRecord[i].apuhrs +'</td><th style="vertical-align: middle; width: 10px;">Hrs</th></tr><tr class="stripe"><td>'+ allRecord[i].afcyc +'</td><th>FC</th><td>'+ allRecord[i].e1cyc +'</td><th>FC</th><td>'+ allRecord[i].e2cyc +'</td><th>FC</th><td>'+ allRecord[i].apucyc +'</td><th>Cyc</th></tr></tbody>';
         } else {
-            row = '<tbody class="delete"><tr><td style="vertical-align: middle;" rowspan="2">'+ allRecord[i].registration +'</td><td style="vertical-align: middle;" rowspan="2">'+ allRecord[i].date +'</td><td style="vertical-align: middle;" rowspan="2">'+ allRecord[i].tlprange +'</td><td style="vertical-align: middle;">'+ allRecord[i].afhrs +'</td><th style="vertical-align: middle; width: 10px;">FH</th><td style="vertical-align: middle;">'+ allRecord[i].e1hrs +'</td><th style="vertical-align: middle; width: 10px;">FH</th><td style="vertical-align: middle;">'+ allRecord[i].e2hrs +'</td><th style="vertical-align: middle; width: 10px;">FH</th><td style="vertical-align: middle;" rowspan="2">'+ allRecord[i].chka +'</td><td style="vertical-align: middle;" rowspan="2">'+ allRecord[i].chkc +'</td><td style="vertical-align: middle;" rowspan="2">'+ allRecord[i].remarks +'</td></tr><tr><td>'+ allRecord[i].afcyc +'</td><th>FC</th><td>'+ allRecord[i].e1cyc +'</td><th>FC</th><td>'+ allRecord[i].e2cyc +'</td><th>FC</th></tr></tbody>';
+            row = '<tbody class="delete"><tr class=""><td style="vertical-align: middle;" rowspan="3">'+ allRecord[i].registration +'</td><td style="vertical-align: middle;" rowspan="3">'+ allRecord[i].date +'</td><td style="vertical-align: middle;" rowspan="3">'+ allRecord[i].tlprange +'</td><td colspan="2" style="font-weight: 400; color: DarkCyan;">'+ allRecord[i].msn +'</td><td colspan="2" style="font-weight: 400; color: DarkCyan;">'+ allRecord[i].e1esn +'</td><td colspan="2" style="font-weight: 400; color: DarkCyan;">'+ allRecord[i].e2esn +'</td><td colspan="2" style="font-weight: 400; color: DarkCyan;">'+ allRecord[i].apusn +'</td><td style="vertical-align: middle;" rowspan="3">'+ allRecord[i].chka +'</td><td style="vertical-align: middle;" rowspan="3">'+ allRecord[i].chkc +'</td><td style="vertical-align: middle;" rowspan="3">'+ allRecord[i].remarks +'</td></tr><tr class=""><td style="vertical-align: middle;">'+ allRecord[i].afhrs +'</td><th style="vertical-align: middle; width: 10px;">FH</th><td style="vertical-align: middle;">'+ allRecord[i].e1hrs +'</td><th style="vertical-align: middle; width: 10px;">FH</th><td style="vertical-align: middle;">'+ allRecord[i].e2hrs +'</td><th style="vertical-align: middle; width: 10px;">FH</th><td style="vertical-align: middle;">'+ allRecord[i].apuhrs +'</td><th style="vertical-align: middle; width: 10px;">Hrs</th></tr><tr class=""><td>'+ allRecord[i].afcyc +'</td><th>FC</th><td>'+ allRecord[i].e1cyc +'</td><th>FC</th><td>'+ allRecord[i].e2cyc +'</td><th>FC</th><td>'+ allRecord[i].apucyc +'</td><th>Cyc</th></tr></tbody>';
         }
         table += row;
     }
@@ -207,10 +207,16 @@ acForm.onsubmit = function (e) {
     aircraft.remarks = statusUpdate(status, "remarks");
     aircraft.afhrs = acForm.afhrs.value;
     aircraft.afcyc = acForm.afcyc.value;
+    aircraft.msn = 'MSN: '+ acForm.msn.value;
     aircraft.e1hrs = acForm.e1hrs.value;
     aircraft.e1cyc = acForm.e1cyc.value;
+    aircraft.e1esn = 'ESN: '+ acForm.e1esn.value;
     aircraft.e2hrs = acForm.e2hrs.value;
     aircraft.e2cyc = acForm.e2cyc.value;
+    aircraft.e2esn = 'ESN: '+ acForm.e2esn.value;
+    aircraft.apuhrs = acForm.apuhrs.value;
+    aircraft.apucyc = acForm.apucyc.value;
+    aircraft.apusn = 'P-'+ acForm.apusn.value;
     aircraft.chka = acForm.chka.value;
     aircraft.chkc = acForm.chkc.value;
     
@@ -250,6 +256,8 @@ updateAcForm.onsubmit = function (e) {
     e.preventDefault();
     var thrs = document.getElementById("thrs").value;
     var tcyc = document.getElementById("tcyc").value;
+    var upapuhrs = document.getElementById("upapuhrs").value;
+    var upapucyc = document.getElementById("upapucyc").value;
     var upDate = document.getElementById("up-date").value;
     var uptlprange = document.getElementById("uptlpfrom").value+" "+document.getElementById("uptoorand").innerHTML+" "+document.getElementById("uptlpto").value;
     var status = document.getElementById("upstatusselection").value;
@@ -285,6 +293,8 @@ updateAcForm.onsubmit = function (e) {
         remarks: upremarks,
         afhrs: addtime(data.afhrs, thrs),
         afcyc: (parseInt(data.afcyc) + parseInt(tcyc)).toString(),
+        apuhrs: upapuhrs,
+        apucyc: upapucyc,
         e1hrs: addtime(data.e1hrs, thrs),
         e1cyc: (parseInt(data.e1cyc) + parseInt(tcyc)).toString(),
         e2hrs: addtime(data.e2hrs, thrs),
