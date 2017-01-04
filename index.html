@@ -14,10 +14,7 @@
 
 <body class="container-fluid text-center animated zoomIn">
     <nav style="width:96vw; margin: 0 auto;">
-        <h1 class="pull-left">
-            <span style="color: #828282; font-weight: 200;">air</span>
-            <span style="color: #252f86; font-weight: 800;">blue</span>
-        </h1>
+        <h1 class="pull-left"><span style="color: #828282; font-weight: 200;">air</span><span style="color: #252f86; font-weight: 800;">blue</span></h1>
         <div class="pull-right" style="margin-top:15px; ">
             <!-- Trigger the new A/C modal with a button -->
             <button type="button" class="btn-margin btn btn-primary" data-toggle="modal" data-target="#addac">Add New Aircraft</button>
@@ -44,8 +41,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Add New Aircraft</h4>
-                </div>
+                    <h4 class="modal-title">Add New Aircraft</h4> </div>
                 <div class="modal-body">
                     <form class="form-horizontal" id="aircraft-form">
                         <div class="form-group">
@@ -53,16 +49,12 @@
                             <div class="col-sm-9">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <div class="input-group">
-                                            <input class="form-control" type="text" name="registration" id="reg" placeholder="AP-XXX" required>
-                                            <span class="input-group-addon"><i class="glyphicon glyphicon-plane"></i></span>
-                                        </div>
+                                <div class="input-group">
+                                    <input class="form-control" type="text" name="registration" id="reg" placeholder="AP-XXX" required><span class="input-group-addon"><i class="glyphicon glyphicon-plane"></i></span> </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" name="msn" id="msn" placeholder="0000" required>
-                                            <span class="input-group-addon">MSN</span>
-                                        </div>
+                                            <input type="number" class="form-control" name="msn" id="msn" placeholder="0000" required><span class="input-group-addon">MSN</span> </div>
                                     </div>
                                 </div>
                             </div>
@@ -71,9 +63,7 @@
                             <label class="control-label col-sm-3">Date</label>
                             <div class="col-sm-9">
                                 <div class="input-group date">
-                                    <input type="text" class="form-control" name="date" id="date" placeholder="dd-M-yyyy" required>
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                                </div>
+                                    <input type="text" class="form-control" name="date" id="date" placeholder="dd-M-yyyy" required><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span> </div>
                             </div>
                         </div>
                         <div class="form-group">
@@ -143,15 +133,11 @@
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" name="apuhrs" id="apuhrs" placeholder="0000" required>
-                                            <span class="input-group-addon">Hrs</span>
-                                        </div>
+                                            <input type="number" class="form-control" name="apuhrs" id="apuhrs" placeholder="0000" required><span class="input-group-addon">Hrs</span> </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" name="apucyc" id="apucyc" placeholder="0000" required>
-                                            <span class="input-group-addon">Cyc</span>
-                                        </div>
+                                            <input type="number" class="form-control" name="apucyc" id="apucyc" placeholder="0000" required><span class="input-group-addon">Cyc</span> </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="input-group">
@@ -165,14 +151,14 @@
                             <div class="col-sm-9">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <div class="input-group">
-                                            <input class="timepicker form-control" name="chka" id="chka" placeholder="000:00" required><span class="input-group-addon">A</span> </div>
-                                    </div>
+                                <div class="input-group">
+                                    <input class="timepicker form-control" name="chka" id="chka" placeholder="000:00" required><span class="input-group-addon">A</span> </div> 
+                                    </div> 
                                     <div class="col-sm-6">
                                         <div class="input-group">
-                                            <input class="timepicker form-control" name="chkc" id="chkc" placeholder="000:00" required><span class="input-group-addon">C</span> </div>
+                                    <input class="timepicker form-control" name="chkc" id="chkc" placeholder="000:00" required><span class="input-group-addon">C</span> </div>
                                     </div>
-
+                                
                                 </div>
                             </div>
                         </div>
@@ -185,17 +171,22 @@
                         <div class="form-group">
                             <div class="col-sm-9 col-sm-offset-3">
                                 <div class="row">
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-4">
                                         <div class="input-group">
                                             <select name="statusselection" id="statusselection" class="form-control" onchange="statusSelection('statusselection', 'txtarea', 'remarks')">
-<option value="completed">Completed</option>
-<option value="missing-pages">Missing Pages</option>
-<option value="ac-us">Aircraft U/S</option>
-<option value="ac-nofly">Aircraft No Fly</option>
-</select>
+                                                <option value="completed">Completed</option>
+                                                <option value="missing-pages">Missing Pages</option>
+                                                <option value="ac-us">Aircraft U/S</option>
+                                                <option value="ac-nofly">Aircraft No Fly</option>
+                                            </select>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-3 col-sm-offset-1">
+                                        <div class="input-group">
+                                            <button class="btn btn-default" type="reset">Reset</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col-sm-offset-1">
                                         <div class="input-group">
                                             <button class="btn btn-default" type="submit">Submit</button>
                                         </div>
@@ -218,8 +209,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Update Aircraft</h4>
-                </div>
+                    <h4 class="modal-title">Update Aircraft</h4> </div>
                 <div class="modal-body">
                     <form class="form-horizontal" id="updateac-form">
                         <div class="form-group">
@@ -228,15 +218,11 @@
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="input-group">
-                                            <input class="timepicker form-control" name="thrs" id="thrs" placeholder="000:00" required>
-                                            <span class="input-group-addon">Hrs</span>
-                                        </div>
+                                            <input class="timepicker form-control" name="thrs" id="thrs" placeholder="000:00" required><span class="input-group-addon">Hrs</span> </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" name="tcyc" id="tcyc" placeholder="0000" required>
-                                            <span class="input-group-addon">Cyc</span>
-                                        </div>
+                                            <input type="number" class="form-control" name="tcyc" id="tcyc" placeholder="0000" required><span class="input-group-addon">Cyc</span> </div>
                                     </div>
                                 </div>
                             </div>
@@ -247,15 +233,11 @@
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" name="upapuhrs" id="upapuhrs" placeholder="0000" required>
-                                            <span class="input-group-addon">Hrs</span>
-                                        </div>
+                                            <input type="number" class="form-control" name="upapuhrs" id="upapuhrs" placeholder="0000" required><span class="input-group-addon">Hrs</span> </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" name="upapucyc" id="upapucyc" placeholder="0000" required>
-                                            <span class="input-group-addon">Cyc</span>
-                                        </div>
+                                            <input type="number" class="form-control" name="upapucyc" id="upapucyc" placeholder="0000" required><span class="input-group-addon">Cyc</span> </div>
                                     </div>
                                 </div>
                             </div>
@@ -264,9 +246,7 @@
                             <label class="control-label col-sm-3">Date</label>
                             <div class="col-sm-9">
                                 <div class="input-group date">
-                                    <input type="text" class="form-control" name="up-date" id="up-date" placeholder="dd-M-yyyy" required>
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                                </div>
+                                    <input type="text" class="form-control" name="up-date" id="up-date" placeholder="dd-M-yyyy" required><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span> </div>
                             </div>
                         </div>
                         <div class="form-group">
@@ -296,24 +276,29 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-sm-9 col-sm-offset-3">
+                            <div class="col-sm-12">
                                 <div class="row">
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-2 col-sm-offset-1">
+                                        <div class="input-group">
+                                            <button class="btn btn-default" type="reset">Reset</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
                                         <div class="input-group">
                                             <select id="updateselection" class="form-control"> </select>
                                         </div>
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-3">
                                         <div class="input-group">
                                             <select id="upstatusselection" class="form-control" onchange="statusSelection('upstatusselection', 'uptxtarea', 'upremarks')">
-<option value="completed">Completed</option>
-<option value="missing-pages">Missing Pages</option>
-<option value="ac-us">Aircraft U/S</option>
-<option value="ac-nofly">Aircraft No Fly</option>
-</select>
+                                                <option value="completed">Completed</option>
+                                                <option value="missing-pages">Missing Pages</option>
+                                                <option value="ac-us">Aircraft U/S</option>
+                                                <option value="ac-nofly">Aircraft No Fly</option>
+                                            </select>
                                         </div>
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-3">
                                         <div class="input-group">
                                             <button class="btn btn-default" type="submit">Update Aircraft</button>
                                         </div>
@@ -336,8 +321,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Hours Estimator</h4>
-                </div>
+                    <h4 class="modal-title">Hours Estimator</h4> </div>
                 <div class="modal-body">
                     <div id="estimator-table-print">
                         <table class="table table-bordered table-condensed">
@@ -370,8 +354,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Check A & C Hours Adjustment</h4>
-                </div>
+                    <h4 class="modal-title">Check A & C Hours Adjustment</h4> </div>
                 <div class="modal-body">
                     <form class="form-inline" id="adjustchks-form">
                         <div class="form-group">
@@ -379,9 +362,7 @@
                                 <label class="control-label col-sm-3" style="padding-top: 5px;">Hrs till Check A</label>
                                 <div class="col-sm-4">
                                     <div class="input-group">
-                                        <input class="timepicker form-control" name="adjustchka" id="adjustchka" placeholder="000:00" value="00:00">
-                                        <span class="input-group-addon">Hrs</span>
-                                    </div>
+                                        <input class="timepicker form-control" name="adjustchka" id="adjustchka" placeholder="000:00" value="00:00"><span class="input-group-addon">Hrs</span> </div>
                                 </div>
                                 <div class="col-sm-5" style="text-align: left;">
                                     <label style="padding-right: 30px;">Reset Check A </label>
@@ -392,9 +373,7 @@
                                 <label class="control-label col-sm-3" style="padding-top: 5px;">Hrs till Check C</label>
                                 <div class="col-sm-4">
                                     <div class="input-group">
-                                        <input class="timepicker form-control" name="adjustchkc" id="adjustchkc" placeholder="000:00" value="00:00">
-                                        <span class="input-group-addon">Hrs</span>
-                                    </div>
+                                        <input class="timepicker form-control" name="adjustchkc" id="adjustchkc" placeholder="000:00" value="00:00"><span class="input-group-addon">Hrs</span> </div>
                                 </div>
                                 <div class="col-sm-5" style="text-align: left;">
                                     <label style="padding-right: 30px;">Reset Check C </label>
@@ -429,8 +408,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Remove Aircraft</h4>
-                </div>
+                    <h4 class="modal-title">Remove Aircraft</h4> </div>
                 <div class="modal-body">
                     <form class="form-inline" id="removeac-form">
                         <select id="remselection" class="form-control"> </select>
@@ -450,22 +428,15 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">About</h4>
-                </div>
+                    <h4 class="modal-title">About</h4> </div>
                 <div class="modal-body">
-                    <h4>
-                        <span style="color: #828282; font-weight: 200;">air</span>
-                        <span style="color: #252f86; font-weight: 800;">blue</span> Hrs/Cyc's App</h4>
+                    <h4><span style="color: #828282; font-weight: 200;">air</span><span style="color: #252f86; font-weight: 800;">blue</span> Hrs/Cyc's App</h4>
                     <p>Release Version 1.0.0
                         <br> Release Date: Mon Dec 19 2016
                         <br> Released under MIT license & is free to use and copy.</p>
                     <p>Airblue's Logo is a registered Trademark & All Rights reserved by it's owners</p>
-                    <p>Documentation & source at:
-                        <a href="javascript:;" onclick="openUrl('https://github.com/nawazishali/Airblue-Hrs-Cyc-Application')">https://github.com/nawazishali/Airblue-Hrs-Cyc-Application</a>
-                    </p>
-                    <p>Made with &hearts; Using JavaScript by:
-                        <a href="javascript:;" onclick="openUrl('https://nawazishali.github.io')">Nawazish Ali</a>
-                    </p>
+                    <p>Documentation & source at: <a href="javascript:;" onclick="openUrl('https://github.com/nawazishali/Airblue-Hrs-Cyc-Application')">https://github.com/nawazishali/Airblue-Hrs-Cyc-Application</a></p>
+                    <p>Made with &hearts; Using JavaScript by: <a href="javascript:;" onclick="openUrl('https://nawazishali.github.io')">Nawazish Ali</a> </p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -476,7 +447,7 @@
     <table class="table table-bordered table-condensed" id="aircraft-table" style="width: 96vw;">
         <thead id="data">
             <tr>
-                <th style="text-align:center; vertical-align: middle; height: 70px; font-size: 40px;" colspan="14">Hours & Cycles Status</th>
+                <th style="text-align:center; vertical-align: middle; height: 70px; font-size: 40px;" colspan="14">Hours & Cycles Status <span style="font-size: 20px;">DT: </span><span id="todayDT" style="font-size: 20px;"></span></Span></th>
             </tr>
             <tr style="background-color:#252f86; color: white;">
                 <th style="text-align:center; vertical-align: middle; height: 60px;">Aircraft</th>
