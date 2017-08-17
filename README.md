@@ -1,7 +1,7 @@
 
-#**Airblue's Aircraft Hours & Cycles Desktop Application**
+# **Airblue's Aircraft Hours & Cycles Desktop Application**
 ----------
-###**Story behind this App**
+### **Story behind this App**
 This application was created as a self initiative by me for my workplace. In order for you to understand why I had to take this initiative I will first need to explain what Hours & Cycles actually mean in an Airline. 
 
 **Hours** = Total Duration of time aircraft has flown in a day or after manufacturing date, 
@@ -22,7 +22,7 @@ In short this app helps speed up the process of daily status update.
 
 
 ----------
-###**Features list**
+### **Features list**
 
 This is the list of features this application possesses.
 
@@ -42,7 +42,7 @@ This is the list of features this application possesses.
 
 
 ----------
-###**Installation & Usage**
+### **Installation & Usage**
 
 Steps to Install are as follows.
 
@@ -54,7 +54,7 @@ Steps to Install are as follows.
 
 
 ----------
-###**Changelog**
+### **Changelog**
 
 Jan 4, 2017
 
