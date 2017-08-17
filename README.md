@@ -73,14 +73,14 @@ Dec 23, 2016
 
 
 ----------
-###**Features For Future**
+### **Features For Future**
 
  1. Add an option that calculates & displays remaining days & an estimated date as per user entered values for all Aircraft Checks.
  2. Add an Hours Calculator for users so that they can calculate hours easily without the need of paper. (This feature is not required for this app itself but will be pretty useful for my colleagues).
 
 
 ----------
-###**Libraries & Links used** 
+### **Libraries & Links used** 
 Will be added later as soon as I get some extra time.
 
 
